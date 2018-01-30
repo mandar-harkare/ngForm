@@ -1,32 +1,55 @@
-<h3>Using NgForm with NgModel</h3>
+<h3></h3>
 <div>
-	<form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
-	 <div> 
-	  Name: <input name="name" ngModel required #userName="ngModel">
-	 </div> 
-	 <div> 	 
-	  City: <input name="city" ngModel #userCity="ngModel">
-	 </div>	  
-	 <div> 	  
-	  State: <input name="state" ngModel>	  
-	 </div>	  
-	 <div> 	  
-	  <button>Submit</button>
-	  <button type="button" (click)="resetUserForm(userForm)">Reset</button>
-	 </div>	  
-	</form>
+	
 </div>
-<div>
-	<p>Form value: <b> {{ userForm.value | json }} </b></p>
-	<p>Form valid: <b> {{ userForm.valid }} </b></p>
-	<p>Form touched: <b> {{ userForm.touched }} </b></p>
-	<p>Form submitted: <b> {{ userForm.submitted }} </b></p>
-</div>
-<div>
-	<p>Name value: <b> {{ userName.value }} </b></p>
-	<p>Name valid: <b> {{ userName.valid }} </b></p>
-</div>
-<div>
-	<p>City value: <b> {{ userCity.value }} </b></p>
-	<p>City valid: <b> {{ userCity.valid }} </b></p>
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome</h1>
+    <h2>Using NgForm with NgModel Demo</h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Form</div>
+    <div class="panel-body">
+      <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+		<label for="name" class="col-2 col-form-label">Name</label>
+		<div class="col-10"> 
+			<input class="form-control" name="name" id="name" ngModel required #userName="ngModel">
+		</div>
+		<label for="city" class="col-2 col-form-label">City</label>
+		<div class="col-10"> 	 
+			<input class="form-control" name="city" id="city" ngModel #userCity="ngModel">
+		</div>	
+		<label for="name" class="col-2 col-form-label">State</label>  
+		<div class="col-10"> 	  
+			<input class="form-control" name="state" id="state" ngModel>	  
+		</div>
+		<br>	  
+		<div> 	  
+		<button class="btn btn-primary">Submit</button>
+		<button class="btn btn-primary" type="button" (click)="resetUserForm(userForm)">Reset</button>
+		</div>	  
+		</form>
+    </div>
+  </div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">Values</div>
+		<div class="panel-body">
+		<div>
+			<p>Form value: <b> {{ userForm.value | json }} </b></p>
+			<p>Form valid: <b> {{ userForm.valid }} </b></p>
+			<p>Form touched: <b> {{ userForm.touched }} </b></p>
+			<p>Form submitted: <b> {{ userForm.submitted }} </b></p>
+		</div>
+		<div>
+			<p>Name value: <b> {{ userName.value }} </b></p>
+			<p>Name valid: <b> {{ userName.valid }} </b></p>
+		</div>
+		<div>
+			<p>City value: <b> {{ userCity.value }} </b></p>
+			<p>City valid: <b> {{ userCity.valid }} </b></p>
+		</div>
+		</div>
+	</div>
 </div>
